@@ -7,7 +7,7 @@ namespace Catalog.API.Context
     {
         private static IConfiguration configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", true, true).Build();
         private static string? connectionString = configuration.GetConnectionString("Catalog.API");
-        private static string? databaseName = configuration.GetValue<string>("CatalogDb");
+        private static string? databaseName = configuration.GetValue<string>("DatabaseName");
 
         public CatalogDbContext() : base(connectionString, databaseName)
         {
